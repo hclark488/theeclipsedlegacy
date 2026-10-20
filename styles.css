@@ -6,3 +6,12 @@
 .button.primary{background:var(--gold);color:#151018}
 .coverlink img{transition:transform .2s ease,box-shadow .2s ease}
 .coverlink:hover img{transform:translateY(-4px);box-shadow:0 20px 45px #000a}
+.orders img {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 24px;
+  border-radius: 4px;
+}
