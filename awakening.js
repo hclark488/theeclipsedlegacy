@@ -180,54 +180,111 @@ const orderNames = [
 
 
 /* =========================================
+   OFFICIAL ORDER VISUALS
+========================================= */
+
+const orderVisuals = {
+
+  Ember: {
+    color: "#B83A3A",
+    symbol: "assets/ember-symbol.png",
+    alt: "Ember Order symbol"
+  },
+
+  Veil: {
+    color: "#6F4A8E",
+    symbol: "assets/veil-symbol.png",
+    alt: "Veil Order symbol"
+  },
+
+  Verdant: {
+    color: "#4F7A4E",
+    symbol: "assets/verdant-symbol.png",
+    alt: "Verdant Order symbol"
+  },
+
+  Astral: {
+    color: "#C69A3B",
+    symbol: "assets/astral-symbol.png",
+    alt: "Astral Order symbol"
+  },
+
+  Iron: {
+    color: "#4D6F8A",
+    symbol: "assets/iron-symbol.png",
+    alt: "Iron Order symbol"
+  },
+
+  Eclipsed: {
+    color: "#1F1B24",
+    symbol: "assets/eclipsed-symbol.png",
+    alt: "Eclipsed Order symbol"
+  }
+
+};
+
+
+/* =========================================
    RESULT PROFILES
 ========================================= */
 
 const results = {
+
   Ember: {
-    opening: "You move when others hesitate.",
+    opening:
+      "You move when others hesitate.",
     description:
       "Your instinct is action. You trust courage earned in motion and would rather face the consequences of a choice than surrender the choice entirely. You are passionate, decisive, fiercely alive, and difficult to intimidate.",
     warning:
       "Your greatest strength can also become your danger. Power without restraint consumes whatever stands nearest.",
-    mark: "Your Mark burns red."
+    mark:
+      "Your Mark burns red."
   },
 
   Veil: {
-    opening: "You notice what others overlook.",
+    opening:
+      "You notice what others overlook.",
     description:
       "You understand that what is hidden can matter as much as what is seen. You observe before acting, guard what you reveal, and instinctively search for motives beneath words. Your strength lies in subtlety, perception, and adaptability.",
     warning:
       "But concealment carries its own danger. Hide too much of yourself for too long, and eventually even you may forget what remains beneath the Veil.",
-    mark: "Your Mark awakens violet."
+    mark:
+      "Your Mark awakens violet."
   },
 
   Verdant: {
-    opening: "You understand that survival is a living thing.",
+    opening:
+      "You understand that survival is a living thing.",
     description:
       "You notice needs. You adapt. You nurture what can grow and remove what threatens it. Compassion and practicality coexist easily in you because protecting life sometimes requires gentleness and sometimes something sharper.",
     warning:
       "Your greatest danger is giving too much of yourself to what you're trying to save.",
-    mark: "Your Mark awakens green."
+    mark:
+      "Your Mark awakens green."
   },
 
   Astral: {
-    opening: "You cannot leave a question unanswered.",
+    opening:
+      "You cannot leave a question unanswered.",
     description:
       "Meaning matters to you. So do memory, history, possibility, and the invisible threads connecting what happened to what comes next. You seek understanding before certainty.",
     warning:
       "But there are questions deep enough to swallow the person asking them.",
-    mark: "Your Mark awakens gold."
+    mark:
+      "Your Mark awakens gold."
   },
 
   Iron: {
-    opening: "When everything moves, you become the thing that doesn't.",
+    opening:
+      "When everything moves, you become the thing that doesn't.",
     description:
       "You protect. You endure. You build structures capable of surviving pressure and become the person others instinctively stand beside when things begin to fall apart. Reliability is one of your greatest strengths.",
     warning:
       "But strength held too rigidly can become its own kind of prison.",
-    mark: "Your Mark awakens blue."
+    mark:
+      "Your Mark awakens blue."
   }
+
 };
 
 
@@ -248,12 +305,15 @@ const scoringMatrix = [
     { orders: { Ember: 2 } },
     { orders: { Veil: 2 } },
     { orders: { Verdant: 2 } },
+
     {
       orders: { Astral: 2 },
       eclipsed: 1,
       traits: ["questioning"]
     },
+
     { orders: { Iron: 2 } },
+
     {
       orders: { Astral: 1, Veil: 1 },
       eclipsed: 2,
@@ -261,21 +321,26 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 2
   [
     { orders: { Ember: 2 } },
+
     {
       orders: { Veil: 2 },
       eclipsed: 1,
       traits: ["relational"]
     },
+
     { orders: { Verdant: 2 } },
     { orders: { Astral: 2 } },
+
     {
       orders: { Iron: 2 },
       eclipsed: 1,
       traits: ["relational"]
     },
+
     {
       orders: { Veil: 1, Astral: 1 },
       eclipsed: 2,
@@ -283,21 +348,26 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 3
   [
     { orders: { Ember: 2 } },
     { orders: { Veil: 2 } },
+
     {
       orders: { Verdant: 2 },
       eclipsed: 1,
       traits: ["relational"]
     },
+
     {
       orders: { Astral: 2 },
       eclipsed: 1,
       traits: ["structural"]
     },
+
     { orders: { Iron: 2 } },
+
     {
       orders: { Astral: 1, Iron: 1 },
       eclipsed: 2,
@@ -305,25 +375,31 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 4
   [
     { orders: { Ember: 2 } },
+
     {
       orders: { Veil: 2 },
       eclipsed: 1,
       traits: ["questioning"]
     },
+
     { orders: { Verdant: 2 } },
+
     {
       orders: { Astral: 2 },
       eclipsed: 1,
       traits: ["structural"]
     },
+
     {
       orders: { Iron: 2 },
       eclipsed: 2,
       traits: ["relational", "rewrite"]
     },
+
     {
       orders: { Astral: 1, Iron: 1 },
       eclipsed: 2,
@@ -331,39 +407,47 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 5
   [
     { orders: { Ember: 2 } },
     { orders: { Veil: 2 } },
     { orders: { Verdant: 2 } },
+
     {
       orders: { Astral: 2 },
       eclipsed: 1,
       traits: ["questioning"]
     },
+
     {
       orders: { Iron: 2 },
       eclipsed: 1,
       traits: ["relational"]
     },
+
     {
       orders: { Astral: 1, Veil: 1 },
       eclipsed: 2,
       traits: ["structural", "relational"]
     }
   ],
+
 
   // QUESTION 6
   [
     { orders: { Ember: 2 } },
     { orders: { Veil: 2 } },
     { orders: { Verdant: 2 } },
+
     {
       orders: { Astral: 2 },
       eclipsed: 1,
       traits: ["questioning"]
     },
+
     { orders: { Iron: 2 } },
+
     {
       orders: { Astral: 1, Veil: 1 },
       eclipsed: 2,
@@ -371,17 +455,21 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 7
   [
     { orders: { Ember: 2 } },
     { orders: { Veil: 2 } },
     { orders: { Verdant: 2 } },
+
     {
       orders: { Astral: 2 },
       eclipsed: 1,
       traits: ["structural"]
     },
+
     { orders: { Iron: 2 } },
+
     {
       orders: { Astral: 1, Ember: 1 },
       eclipsed: 2,
@@ -389,17 +477,21 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 8
   [
     { orders: { Ember: 2 } },
     { orders: { Veil: 2 } },
+
     {
       orders: { Verdant: 2 },
       eclipsed: 1,
       traits: ["relational"]
     },
+
     { orders: { Astral: 2 } },
     { orders: { Iron: 2 } },
+
     {
       orders: { Verdant: 1, Astral: 1 },
       eclipsed: 2,
@@ -407,17 +499,21 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 9
   [
     { orders: { Ember: 2 } },
     { orders: { Veil: 2 } },
     { orders: { Verdant: 2 } },
+
     {
       orders: { Astral: 2 },
       eclipsed: 1,
       traits: ["questioning"]
     },
+
     { orders: { Iron: 2 } },
+
     {
       orders: { Astral: 1, Veil: 1 },
       eclipsed: 2,
@@ -425,21 +521,25 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 10
   [
     { orders: { Ember: 2 } },
     { orders: { Veil: 2 } },
     { orders: { Verdant: 2 } },
+
     {
       orders: { Astral: 2 },
       eclipsed: 1,
       traits: ["questioning"]
     },
+
     {
       orders: { Iron: 2 },
       eclipsed: 1,
       traits: ["structural"]
     },
+
     {
       orders: { Astral: 1, Iron: 1 },
       eclipsed: 2,
@@ -447,17 +547,21 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 11
   [
     { orders: { Ember: 2 } },
     { orders: { Veil: 2 } },
+
     {
       orders: { Verdant: 2 },
       eclipsed: 1,
       traits: ["relational"]
     },
+
     { orders: { Astral: 2 } },
     { orders: { Iron: 2 } },
+
     {
       orders: { Astral: 1, Ember: 1 },
       eclipsed: 2,
@@ -465,27 +569,34 @@ const scoringMatrix = [
     }
   ],
 
+
   // QUESTION 12
   [
     { orders: { Ember: 2 } },
+
     {
       orders: { Veil: 2 },
       eclipsed: 1,
       traits: ["questioning"]
     },
+
     { orders: { Verdant: 2 } },
+
     {
       orders: { Astral: 2 },
       eclipsed: 1,
       traits: ["questioning", "structural"]
     },
+
     { orders: { Iron: 2 } },
+
     {
       orders: { Veil: 1, Astral: 1 },
       eclipsed: 2,
       traits: ["questioning"]
     }
   ]
+
 ];
 
 
@@ -549,6 +660,9 @@ const questionText =
 const answerOptions =
   document.getElementById("answer-options");
 
+const resultSymbol =
+  document.getElementById("result-symbol");
+
 const resultOrder =
   document.getElementById("result-order");
 
@@ -580,14 +694,12 @@ beginButton.addEventListener(
 
 function beginAssessment() {
 
+  resetVisualState();
+
   startScreen.hidden = true;
   resultScreen.hidden = true;
   eclipsedSequence.hidden = true;
   eclipsedResult.hidden = true;
-
-  document.body.classList.remove(
-    "eclipsed-awakening"
-  );
 
   quizScreen.hidden = false;
 
@@ -783,6 +895,9 @@ function showRecognizedResult(
   const result =
     results[primary];
 
+  const visual =
+    orderVisuals[primary];
+
 
   resultOrder.textContent =
     `${primary.toUpperCase()} ORDER`;
@@ -803,7 +918,38 @@ function showRecognizedResult(
     secondary.toUpperCase();
 
 
+  resultSymbol.innerHTML = "";
+
+  const symbol =
+    document.createElement("img");
+
+  symbol.src =
+    visual.symbol;
+
+  symbol.alt =
+    visual.alt;
+
+  symbol.className =
+    "awakening-result-symbol";
+
+  resultSymbol.appendChild(symbol);
+
+
+  document.documentElement.style.setProperty(
+    "--result-order-color",
+    visual.color
+  );
+
+  resultScreen.dataset.order =
+    primary.toLowerCase();
+
   resultScreen.hidden = false;
+
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 
@@ -908,6 +1054,9 @@ async function beginEclipsedSequence() {
 
 
   eclipsedSequence.hidden = true;
+
+  prepareEclipsedResult();
+
   eclipsedResult.hidden = false;
 
 
@@ -916,6 +1065,117 @@ async function beginEclipsedSequence() {
     behavior:
       reducedMotion ? "auto" : "smooth"
   });
+}
+
+
+/* =========================================
+   ECLIPSED RESULT VISUAL
+========================================= */
+
+function prepareEclipsedResult() {
+
+  let symbolContainer =
+    eclipsedResult.querySelector(
+      ".eclipsed-result-symbol"
+    );
+
+
+  if (!symbolContainer) {
+
+    symbolContainer =
+      document.createElement("div");
+
+    symbolContainer.className =
+      "eclipsed-result-symbol";
+
+
+    const heading =
+      eclipsedResult.querySelector("h1, h2");
+
+    if (heading) {
+
+      heading.insertAdjacentElement(
+        "beforebegin",
+        symbolContainer
+      );
+
+    } else {
+
+      eclipsedResult.prepend(
+        symbolContainer
+      );
+
+    }
+
+  }
+
+
+  symbolContainer.innerHTML = "";
+
+
+  const symbol =
+    document.createElement("img");
+
+  symbol.src =
+    orderVisuals.Eclipsed.symbol;
+
+  symbol.alt =
+    orderVisuals.Eclipsed.alt;
+
+  symbol.className =
+    "awakening-eclipsed-symbol";
+
+
+  symbolContainer.appendChild(symbol);
+
+}
+
+
+/* =========================================
+   RESET VISUAL STATE
+========================================= */
+
+function resetVisualState() {
+
+  document.body.classList.remove(
+    "eclipsed-awakening"
+  );
+
+
+  document.documentElement.style.removeProperty(
+    "--result-order-color"
+  );
+
+
+  resultScreen.removeAttribute(
+    "data-order"
+  );
+
+
+  if (resultSymbol) {
+    resultSymbol.innerHTML = "";
+  }
+
+
+  const eclipsedSymbol =
+    eclipsedResult.querySelector(
+      ".eclipsed-result-symbol"
+    );
+
+  if (eclipsedSymbol) {
+    eclipsedSymbol.remove();
+  }
+
+
+  const classificationCheck =
+    document.getElementById(
+      "classification-check"
+    );
+
+  if (classificationCheck) {
+    classificationCheck.innerHTML = "";
+  }
+
 }
 
 
@@ -951,9 +1211,7 @@ document
         eclipsedSequence.hidden = true;
         eclipsedResult.hidden = true;
 
-        document.body.classList.remove(
-          "eclipsed-awakening"
-        );
+        resetVisualState();
 
         startScreen.hidden = false;
 
