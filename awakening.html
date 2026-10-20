@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Awaken Your Mark | The Eclipsed Legacy</title>
+
+  <meta name="description"
+        content="Enter the Kingdom of Veyr and discover which Mark will awaken.">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="awakening.css">
+</head>
+
+<body>
+
+  <main class="awakening-page">
+
+    <!-- OPENING SCREEN -->
+    <section id="awakening-start" class="awakening-screen">
+
+      <div class="awakening-frame">
+
+        <p class="awakening-kicker">
+          KINGDOM OF VEYR
+        </p>
+
+        <h1>WHAT MARK WILL AWAKEN?</h1>
+
+        <p class="awakening-intro">
+          Magic does not reveal the same truth in everyone.
+        </p>
+
+        <p class="awakening-instruction">
+          Twelve choices stand between you and your Mark.
+          Choose what feels instinctive, not what sounds admirable.
+        </p>
+
+        <button id="begin-awakening"
+                class="awakening-button"
+                type="button">
+          BEGIN YOUR AWAKENING
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ASSESSMENT SCREEN -->
+    <section id="awakening-quiz"
+             class="awakening-screen"
+             hidden>
+
+      <div class="awakening-frame">
+
+        <div class="awakening-progress">
+
+          <span id="question-number">
+            QUESTION 01 / 12
+          </span>
+
+          <div class="awakening-progress-track">
+            <div id="awakening-progress-bar"
+                 class="awakening-progress-bar">
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="awakening-question">
+
+          <h2 id="question-text">
+          </h2>
+
+          <div id="answer-options"
+               class="awakening-answers">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- STANDARD ORDER RESULT -->
+    <section id="awakening-result"
+             class="awakening-screen"
+             hidden>
+
+      <div class="awakening-frame result-frame">
+
+        <p class="awakening-kicker">
+          CLASSIFICATION COMPLETE
+        </p>
+
+        <div id="result-symbol"
+             class="result-symbol">
+        </div>
+
+        <h2 id="result-order">
+        </h2>
+
+        <p id="result-opening"
+           class="result-opening">
+        </p>
+
+        <div id="result-description"
+             class="result-description">
+        </div>
+
+        <p id="result-warning"
+           class="result-warning">
+        </p>
+
+        <p id="result-mark"
+           class="result-mark">
+        </p>
+
+        <div class="secondary-affinity">
+          SECONDARY AFFINITY:
+          <span id="secondary-order"></span>
+        </div>
+
+        <button class="awakening-button retake-assessment"
+                type="button">
+          AWAKEN AGAIN
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ECLIPSED FAILURE SEQUENCE -->
+    <section id="eclipsed-sequence"
+             class="awakening-screen"
+             hidden>
+
+      <div class="awakening-frame eclipsed-frame">
+
+        <p class="evaluation-status">
+          MAGICAL EVALUATION COMPLETE
+        </p>
+
+        <p class="evaluation-substatus">
+          Comparing Mark profile against recognized Orders...
+        </p>
+
+        <div id="classification-check"
+             class="classification-check">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ECLIPSED RESULT -->
+    <section id="eclipsed-result"
+             class="awakening-screen"
+             hidden>
+
+      <div class="awakening-frame eclipsed-result-frame">
+
+        <p class="eclipsed-classification">
+          RESULT: NO RECOGNIZED ORDER FOUND
+        </p>
+
+        <div class="eclipsed-symbol">
+        </div>
+
+        <h2>ECLIPSED</h2>
+
+        <p class="eclipsed-opening">
+          You were never choosing between the five.
+        </p>
+
+        <div class="eclipsed-description">
+
+          <p>
+            You look at systems and see their seams.
+          </p>
+
+          <p>
+            Where others see separate choices, you notice
+            relationships. Where others ask which rule to follow,
+            you ask who wrote the rule and whether it still
+            deserves to exist.
+          </p>
+
+          <p>
+            You are not drawn merely toward destruction.
+          </p>
+
+          <p>
+            You are drawn toward change.
+          </p>
+
+          <p>
+            That distinction matters.
+          </p>
+
+        </div>
+
+        <p class="eclipsed-crown-warning">
+          The Crown recognizes five Orders.
+        </p>
+
+        <p class="eclipsed-crown-warning">
+          Your Mark does not appear among them.
+        </p>
+
+        <p class="eclipsed-mark">
+          Your Mark awakens black.
+        </p>
+
+        <div class="eclipsed-redaction">
+          CLASSIFICATION: █████████
+        </div>
+
+        <p class="eclipsed-final-warning">
+          Further evaluation required.
+        </p>
+
+        <p class="eclipsed-final-warning">
+          Do not report to Crown authorities.
+        </p>
+
+        <button class="awakening-button retake-assessment"
+                type="button">
+          AWAKEN AGAIN
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="awakening.js"></script>
+
+</body>
+</html>
