@@ -3026,3 +3026,10 @@ body.order-page .order-hero .order-hero-symbol img {
       rgba(255, 255, 255, .012)
     );
 }
+/* =========================================================
+   IRON — EMBER EXORCISM
+   ========================================================= */
+
+.iron-page .order-archive-tag {
+  color: #6f9abb !important;
+}
