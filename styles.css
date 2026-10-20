@@ -2479,3 +2479,14 @@ footer b {
   }
 
 }
+/* =========================================================
+   ORDER CARD LINK LAYOUT FIX
+   ========================================================= */
+
+.orders > .order-card-link {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+}
