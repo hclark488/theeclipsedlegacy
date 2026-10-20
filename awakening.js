@@ -1,6 +1,16 @@
+/* =========================================
+   THE OFFICIAL VEYR AWAKENING ASSESSMENT
+========================================= */
+
+
+/* =========================================
+   QUESTIONS
+========================================= */
+
 const questions = [
   {
-    question: "You discover a locked door in a place where no door should exist. What do you do?",
+    question:
+      "You discover a locked door in a place where no door should exist. What do you do?",
     answers: [
       "Open it. If it was meant to keep me out, I'll deal with that afterward.",
       "Watch it first. Who uses the door may tell me more than what's behind it.",
@@ -12,7 +22,8 @@ const questions = [
   },
 
   {
-    question: "Someone you trust tells you a secret that could hurt another person. What matters first?",
+    question:
+      "Someone you trust tells you a secret that could hurt another person. What matters first?",
     answers: [
       "Whether keeping it allows more harm to happen.",
       "Why they chose to tell me and who else may already know.",
@@ -24,7 +35,8 @@ const questions = [
   },
 
   {
-    question: "You are given authority over a group during a crisis. What comes naturally?",
+    question:
+      "You are given authority over a group during a crisis. What comes naturally?",
     answers: [
       "Make a decision quickly and get everyone moving.",
       "Learn what everyone knows before revealing what I intend to do.",
@@ -36,7 +48,8 @@ const questions = [
   },
 
   {
-    question: "You learn that a law has protected people for generations, but is hurting someone now.",
+    question:
+      "You learn that a law has protected people for generations, but is hurting someone now.",
     answers: [
       "Break it if that's what protecting them requires.",
       "Work around it without drawing attention until I understand who benefits from it.",
@@ -48,7 +61,8 @@ const questions = [
   },
 
   {
-    question: "When you're frightened, what are you most likely to do?",
+    question:
+      "When you're frightened, what are you most likely to do?",
     answers: [
       "Move. Doing something feels better than waiting.",
       "Become quieter and pay attention to everything around me.",
@@ -60,7 +74,8 @@ const questions = [
   },
 
   {
-    question: "You discover you've been lied to for years. What hurts most?",
+    question:
+      "You discover you've been lied to for years. What hurts most?",
     answers: [
       "That someone believed they had the right to decide for me.",
       "That I didn't notice sooner.",
@@ -72,7 +87,8 @@ const questions = [
   },
 
   {
-    question: "You become lost somewhere unfamiliar. What's your instinct?",
+    question:
+      "You become lost somewhere unfamiliar. What's your instinct?",
     answers: [
       "Choose a direction and move. I can correct course later.",
       "Stay unseen until I understand where I am.",
@@ -84,7 +100,8 @@ const questions = [
   },
 
   {
-    question: "Someone you love is in danger, but helping them puts you at serious risk.",
+    question:
+      "Someone you love is in danger, but helping them puts you at serious risk.",
     answers: [
       "I'm already moving before anyone finishes explaining the risk.",
       "I'll help, but I want the advantage of surprise.",
@@ -96,7 +113,8 @@ const questions = [
   },
 
   {
-    question: "Which failure would be hardest for you to forgive in yourself?",
+    question:
+      "Which failure would be hardest for you to forgive in yourself?",
     answers: [
       "I hesitated when I should have acted.",
       "I trusted someone I should have watched more carefully.",
@@ -108,7 +126,8 @@ const questions = [
   },
 
   {
-    question: "You find an ancient magical object nobody understands. What interests you first?",
+    question:
+      "You find an ancient magical object nobody understands. What interests you first?",
     answers: [
       "What happens when it's activated.",
       "What it was designed to conceal.",
@@ -120,7 +139,8 @@ const questions = [
   },
 
   {
-    question: "Two people you respect give you completely opposite advice.",
+    question:
+      "Two people you respect give you completely opposite advice.",
     answers: [
       "Choose the one that feels right and accept the consequences.",
       "Pay attention to what neither person is saying.",
@@ -132,7 +152,8 @@ const questions = [
   },
 
   {
-    question: "You are told there are only five paths available to you. What is your first thought?",
+    question:
+      "You are told there are only five paths available to you. What is your first thought?",
     answers: [
       "Then I'll choose one and make it mine.",
       "Who decided those were the only five?",
@@ -145,6 +166,10 @@ const questions = [
 ];
 
 
+/* =========================================
+   RECOGNIZED ORDERS
+========================================= */
+
 const orderNames = [
   "Ember",
   "Veil",
@@ -153,6 +178,10 @@ const orderNames = [
   "Iron"
 ];
 
+
+/* =========================================
+   RESULT PROFILES
+========================================= */
 
 const results = {
   Ember: {
@@ -202,6 +231,268 @@ const results = {
 };
 
 
+/* =========================================
+   HIDDEN SCORING MATRIX
+
+   Traits:
+   relational  = relational perception
+   structural  = structural thinking
+   questioning = system questioning
+   rewrite     = Rewrite instinct
+========================================= */
+
+const scoringMatrix = [
+
+  // QUESTION 1
+  [
+    { orders: { Ember: 2 } },
+    { orders: { Veil: 2 } },
+    { orders: { Verdant: 2 } },
+    {
+      orders: { Astral: 2 },
+      eclipsed: 1,
+      traits: ["questioning"]
+    },
+    { orders: { Iron: 2 } },
+    {
+      orders: { Astral: 1, Veil: 1 },
+      eclipsed: 2,
+      traits: ["questioning", "structural"]
+    }
+  ],
+
+  // QUESTION 2
+  [
+    { orders: { Ember: 2 } },
+    {
+      orders: { Veil: 2 },
+      eclipsed: 1,
+      traits: ["relational"]
+    },
+    { orders: { Verdant: 2 } },
+    { orders: { Astral: 2 } },
+    {
+      orders: { Iron: 2 },
+      eclipsed: 1,
+      traits: ["relational"]
+    },
+    {
+      orders: { Veil: 1, Astral: 1 },
+      eclipsed: 2,
+      traits: ["questioning", "structural"]
+    }
+  ],
+
+  // QUESTION 3
+  [
+    { orders: { Ember: 2 } },
+    { orders: { Veil: 2 } },
+    {
+      orders: { Verdant: 2 },
+      eclipsed: 1,
+      traits: ["relational"]
+    },
+    {
+      orders: { Astral: 2 },
+      eclipsed: 1,
+      traits: ["structural"]
+    },
+    { orders: { Iron: 2 } },
+    {
+      orders: { Astral: 1, Iron: 1 },
+      eclipsed: 2,
+      traits: ["structural", "questioning"]
+    }
+  ],
+
+  // QUESTION 4
+  [
+    { orders: { Ember: 2 } },
+    {
+      orders: { Veil: 2 },
+      eclipsed: 1,
+      traits: ["questioning"]
+    },
+    { orders: { Verdant: 2 } },
+    {
+      orders: { Astral: 2 },
+      eclipsed: 1,
+      traits: ["structural"]
+    },
+    {
+      orders: { Iron: 2 },
+      eclipsed: 2,
+      traits: ["relational", "rewrite"]
+    },
+    {
+      orders: { Astral: 1, Iron: 1 },
+      eclipsed: 2,
+      traits: ["rewrite", "structural"]
+    }
+  ],
+
+  // QUESTION 5
+  [
+    { orders: { Ember: 2 } },
+    { orders: { Veil: 2 } },
+    { orders: { Verdant: 2 } },
+    {
+      orders: { Astral: 2 },
+      eclipsed: 1,
+      traits: ["questioning"]
+    },
+    {
+      orders: { Iron: 2 },
+      eclipsed: 1,
+      traits: ["relational"]
+    },
+    {
+      orders: { Astral: 1, Veil: 1 },
+      eclipsed: 2,
+      traits: ["structural", "relational"]
+    }
+  ],
+
+  // QUESTION 6
+  [
+    { orders: { Ember: 2 } },
+    { orders: { Veil: 2 } },
+    { orders: { Verdant: 2 } },
+    {
+      orders: { Astral: 2 },
+      eclipsed: 1,
+      traits: ["questioning"]
+    },
+    { orders: { Iron: 2 } },
+    {
+      orders: { Astral: 1, Veil: 1 },
+      eclipsed: 2,
+      traits: ["structural", "relational"]
+    }
+  ],
+
+  // QUESTION 7
+  [
+    { orders: { Ember: 2 } },
+    { orders: { Veil: 2 } },
+    { orders: { Verdant: 2 } },
+    {
+      orders: { Astral: 2 },
+      eclipsed: 1,
+      traits: ["structural"]
+    },
+    { orders: { Iron: 2 } },
+    {
+      orders: { Astral: 1, Ember: 1 },
+      eclipsed: 2,
+      traits: ["questioning", "rewrite"]
+    }
+  ],
+
+  // QUESTION 8
+  [
+    { orders: { Ember: 2 } },
+    { orders: { Veil: 2 } },
+    {
+      orders: { Verdant: 2 },
+      eclipsed: 1,
+      traits: ["relational"]
+    },
+    { orders: { Astral: 2 } },
+    { orders: { Iron: 2 } },
+    {
+      orders: { Verdant: 1, Astral: 1 },
+      eclipsed: 2,
+      traits: ["relational", "rewrite"]
+    }
+  ],
+
+  // QUESTION 9
+  [
+    { orders: { Ember: 2 } },
+    { orders: { Veil: 2 } },
+    { orders: { Verdant: 2 } },
+    {
+      orders: { Astral: 2 },
+      eclipsed: 1,
+      traits: ["questioning"]
+    },
+    { orders: { Iron: 2 } },
+    {
+      orders: { Astral: 1, Veil: 1 },
+      eclipsed: 2,
+      traits: ["questioning", "structural"]
+    }
+  ],
+
+  // QUESTION 10
+  [
+    { orders: { Ember: 2 } },
+    { orders: { Veil: 2 } },
+    { orders: { Verdant: 2 } },
+    {
+      orders: { Astral: 2 },
+      eclipsed: 1,
+      traits: ["questioning"]
+    },
+    {
+      orders: { Iron: 2 },
+      eclipsed: 1,
+      traits: ["structural"]
+    },
+    {
+      orders: { Astral: 1, Iron: 1 },
+      eclipsed: 2,
+      traits: ["relational", "structural"]
+    }
+  ],
+
+  // QUESTION 11
+  [
+    { orders: { Ember: 2 } },
+    { orders: { Veil: 2 } },
+    {
+      orders: { Verdant: 2 },
+      eclipsed: 1,
+      traits: ["relational"]
+    },
+    { orders: { Astral: 2 } },
+    { orders: { Iron: 2 } },
+    {
+      orders: { Astral: 1, Ember: 1 },
+      eclipsed: 2,
+      traits: ["rewrite", "structural"]
+    }
+  ],
+
+  // QUESTION 12
+  [
+    { orders: { Ember: 2 } },
+    {
+      orders: { Veil: 2 },
+      eclipsed: 1,
+      traits: ["questioning"]
+    },
+    { orders: { Verdant: 2 } },
+    {
+      orders: { Astral: 2 },
+      eclipsed: 1,
+      traits: ["questioning", "structural"]
+    },
+    { orders: { Iron: 2 } },
+    {
+      orders: { Veil: 1, Astral: 1 },
+      eclipsed: 2,
+      traits: ["questioning"]
+    }
+  ]
+];
+
+
+/* =========================================
+   ASSESSMENT STATE
+========================================= */
+
 let currentQuestion = 0;
 
 let scores = {
@@ -212,31 +503,88 @@ let scores = {
   Iron: 0
 };
 
+let eclipsedScore = 0;
 
-const startScreen = document.getElementById("awakening-start");
-const quizScreen = document.getElementById("awakening-quiz");
-const resultScreen = document.getElementById("awakening-result");
+let eclipsedTraits = {
+  relational: 0,
+  structural: 0,
+  questioning: 0,
+  rewrite: 0
+};
 
-const beginButton = document.getElementById("begin-awakening");
-
-const questionNumber = document.getElementById("question-number");
-const progressBar = document.getElementById("awakening-progress-bar");
-const questionText = document.getElementById("question-text");
-const answerOptions = document.getElementById("answer-options");
-
-const resultOrder = document.getElementById("result-order");
-const resultOpening = document.getElementById("result-opening");
-const resultDescription = document.getElementById("result-description");
-const resultWarning = document.getElementById("result-warning");
-const resultMark = document.getElementById("result-mark");
-const secondaryOrder = document.getElementById("secondary-order");
+let fCount = 0;
 
 
-beginButton.addEventListener("click", beginAssessment);
+/* =========================================
+   PAGE ELEMENTS
+========================================= */
+
+const startScreen =
+  document.getElementById("awakening-start");
+
+const quizScreen =
+  document.getElementById("awakening-quiz");
+
+const resultScreen =
+  document.getElementById("awakening-result");
+
+const eclipsedSequence =
+  document.getElementById("eclipsed-sequence");
+
+const eclipsedResult =
+  document.getElementById("eclipsed-result");
+
+const beginButton =
+  document.getElementById("begin-awakening");
+
+const questionNumber =
+  document.getElementById("question-number");
+
+const progressBar =
+  document.getElementById("awakening-progress-bar");
+
+const questionText =
+  document.getElementById("question-text");
+
+const answerOptions =
+  document.getElementById("answer-options");
+
+const resultOrder =
+  document.getElementById("result-order");
+
+const resultOpening =
+  document.getElementById("result-opening");
+
+const resultDescription =
+  document.getElementById("result-description");
+
+const resultWarning =
+  document.getElementById("result-warning");
+
+const resultMark =
+  document.getElementById("result-mark");
+
+const secondaryOrder =
+  document.getElementById("secondary-order");
+
+
+/* =========================================
+   START ASSESSMENT
+========================================= */
+
+beginButton.addEventListener(
+  "click",
+  beginAssessment
+);
 
 
 function beginAssessment() {
+
   startScreen.hidden = true;
+  resultScreen.hidden = true;
+  eclipsedSequence.hidden = true;
+  eclipsedResult.hidden = true;
+
   quizScreen.hidden = false;
 
   currentQuestion = 0;
@@ -249,75 +597,111 @@ function beginAssessment() {
     Iron: 0
   };
 
+  eclipsedScore = 0;
+
+  eclipsedTraits = {
+    relational: 0,
+    structural: 0,
+    questioning: 0,
+    rewrite: 0
+  };
+
+  fCount = 0;
+
   showQuestion();
 }
 
 
+/* =========================================
+   DISPLAY QUESTION
+========================================= */
+
 function showQuestion() {
-  const question = questions[currentQuestion];
+
+  const question =
+    questions[currentQuestion];
 
   questionNumber.textContent =
-    `QUESTION ${String(currentQuestion + 1).padStart(2, "0")} / 12`;
+    `QUESTION ${String(currentQuestion + 1)
+      .padStart(2, "0")} / ${questions.length}`;
 
   progressBar.style.width =
-    `${((currentQuestion + 1) / questions.length) * 100}%`;
+    `${((currentQuestion + 1) /
+      questions.length) * 100}%`;
 
-  questionText.textContent = question.question;
+  questionText.textContent =
+    question.question;
 
   answerOptions.innerHTML = "";
 
-  question.answers.forEach((answer, index) => {
-    const button = document.createElement("button");
 
-    button.type = "button";
-    button.className = "answer-option";
+  question.answers.forEach(
+    (answer, index) => {
 
-    const letter = String.fromCharCode(65 + index);
+      const button =
+        document.createElement("button");
 
-    button.innerHTML =
-      `<span class="answer-letter">${letter}.</span>${answer}`;
+      button.type = "button";
+      button.className = "answer-option";
 
-    button.addEventListener("click", () => {
-      chooseAnswer(index);
-    });
+      const letter =
+        String.fromCharCode(65 + index);
 
-    answerOptions.appendChild(button);
-  });
+      button.innerHTML =
+        `<span class="answer-letter">${letter}.</span>${answer}`;
+
+      button.addEventListener(
+        "click",
+        () => chooseAnswer(index)
+      );
+
+      answerOptions.appendChild(button);
+
+    }
+  );
 }
 
 
+/* =========================================
+   SCORE ANSWER
+========================================= */
+
 function chooseAnswer(answerIndex) {
 
-  /*
-    TEMPORARY RECOGNIZED-ORDER SCORING
+  const scoring =
+    scoringMatrix[currentQuestion][answerIndex];
 
-    A = Ember
-    B = Veil
-    C = Verdant
-    D = Astral
-    E = Iron
 
-    F receives one recognized affinity for now.
+  /* Recognized Order scoring */
 
-    Our complete hidden Eclipsed scoring matrix
-    will replace/extend this after the basic quiz
-    has passed testing.
-  */
+  Object.entries(scoring.orders)
+    .forEach(([order, points]) => {
+      scores[order] += points;
+    });
 
-  if (answerIndex < 5) {
-    const order = orderNames[answerIndex];
-    scores[order] += 2;
+
+  /* Hidden Eclipsed scoring */
+
+  if (scoring.eclipsed) {
+    eclipsedScore += scoring.eclipsed;
   }
 
-  if (answerIndex === 5) {
-    /*
-      Temporary F behavior:
-      award +1 Astral.
 
-      This is ONLY for interface testing.
-      Final F scoring will vary by question.
-    */
-    scores.Astral += 1;
+  /* Hidden Eclipsed traits */
+
+  if (scoring.traits) {
+
+    scoring.traits.forEach((trait) => {
+      eclipsedTraits[trait] += 1;
+    });
+
+  }
+
+
+  /* Track F answers */
+
+  if (answerIndex === 5) {
+    fCount++;
   }
 
 
@@ -325,29 +709,120 @@ function chooseAnswer(answerIndex) {
 
 
   if (currentQuestion < questions.length) {
+
     showQuestion();
+
   } else {
+
     finishAssessment();
+
   }
 }
 
 
+/* =========================================
+   CALCULATE RESULT
+========================================= */
+
 function finishAssessment() {
+
   quizScreen.hidden = true;
+
 
   const rankedOrders =
     Object.entries(scores)
       .sort((a, b) => b[1] - a[1]);
 
-  const primary = rankedOrders[0][0];
-  const secondary = rankedOrders[1][0];
 
-  showRecognizedResult(primary, secondary);
+  const primary =
+    rankedOrders[0][0];
+
+  const secondary =
+    rankedOrders[1][0];
+
+
+  /*
+    Count how many different Eclipsed
+    trait categories appeared.
+  */
+
+  const activeTraits =
+    Object.values(eclipsedTraits)
+      .filter((value) => value > 0)
+      .length;
+
+
+  /*
+    Meaningful recognized affinity requires
+    at least 4 points in an Order.
+
+    Tiny incidental cross-points do not count.
+  */
+
+  const meaningfulAffinities =
+    Object.values(scores)
+      .filter((score) => score >= 4)
+      .length;
+
+
+  /*
+    ECLIPSED QUALIFICATION
+
+    All four conditions must be satisfied.
+
+    1. Hidden Eclipsed score of 13+
+    2. At least 3 of 4 Eclipsed traits
+    3. Meaningful affinity with 3+ Orders
+    4. No more than 7 F answers
+
+    Therefore:
+    ALL-F GOBLIN DOES NOT QUALIFY. 😂
+  */
+
+  const qualifiesForEclipsed =
+    eclipsedScore >= 13 &&
+    activeTraits >= 3 &&
+    meaningfulAffinities >= 3 &&
+    fCount <= 7;
+
+
+  if (qualifiesForEclipsed) {
+
+    console.log(
+      "ECLIPSED QUALIFIED",
+      {
+        eclipsedScore,
+        eclipsedTraits,
+        scores,
+        fCount
+      }
+    );
+
+    showEclipsedTestResult();
+
+    return;
+  }
+
+
+  showRecognizedResult(
+    primary,
+    secondary
+  );
 }
 
 
-function showRecognizedResult(primary, secondary) {
-  const result = results[primary];
+/* =========================================
+   STANDARD ORDER RESULT
+========================================= */
+
+function showRecognizedResult(
+  primary,
+  secondary
+) {
+
+  const result =
+    results[primary];
+
 
   resultOrder.textContent =
     `${primary.toUpperCase()} ORDER`;
@@ -367,28 +842,50 @@ function showRecognizedResult(primary, secondary) {
   secondaryOrder.textContent =
     secondary.toUpperCase();
 
+
   resultScreen.hidden = false;
 }
 
+
+/* =========================================
+   TEMPORARY ECLIPSED TEST RESULT
+
+   Later this will trigger the full corrupted
+   Crown classification sequence.
+========================================= */
+
+function showEclipsedTestResult() {
+
+  eclipsedResult.hidden = false;
+
+}
+
+
+/* =========================================
+   RETAKE ASSESSMENT
+========================================= */
 
 document
   .querySelectorAll(".retake-assessment")
   .forEach((button) => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+      "click",
+      () => {
 
-      resultScreen.hidden = true;
+        quizScreen.hidden = true;
+        resultScreen.hidden = true;
+        eclipsedSequence.hidden = true;
+        eclipsedResult.hidden = true;
 
-      document.getElementById("eclipsed-sequence").hidden = true;
-      document.getElementById("eclipsed-result").hidden = true;
+        startScreen.hidden = false;
 
-      startScreen.hidden = false;
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
 
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
-    });
+      }
+    );
 
   });
