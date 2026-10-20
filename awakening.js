@@ -217,7 +217,7 @@ const orderVisuals = {
 
   Eclipsed: {
     color: "#1F1B24",
-    symbol: "assets/eclipsed-symbol.png",
+    symbol: "assets/eclipsed-symbol.png?v=2",
     alt: "Eclipsed Order symbol"
   }
 
