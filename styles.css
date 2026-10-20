@@ -290,14 +290,15 @@ h3 {
 }
 
 .orders > div {
-  min-height: 300px;
-  padding: 20px;
+  min-height: 360px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   font-family: Cinzel;
   letter-spacing: .1em;
   border: 1px solid #ffffff22;
+  overflow: hidden;
 }
 
 .orders span {
@@ -309,12 +310,12 @@ h3 {
 
 .order-symbol {
   display: block;
-  width: 140px;
-  height: 140px;
-  max-width: 100%;
+  width: 100%;
+  height: 220px;
   object-fit: contain;
-  margin: 0 auto 16px;
-  border-radius: 6px;
+  object-position: center;
+  margin: 0 auto 18px;
+  flex-shrink: 0;
 }
 
 .ember {
