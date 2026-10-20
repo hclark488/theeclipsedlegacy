@@ -1078,6 +1078,537 @@ footer b {
   letter-spacing: .08em;
 }
 
+/* =========================================================
+   MARA VALE // BOOK ONE CARTOGRAPHIC ARCHIVE
+   ========================================================= */
+
+.mara-archive {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 110px;
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+
+
+/* SUBTLE ALTERED-RECORD ATMOSPHERE */
+
+.mara-archive::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(111, 74, 142, .08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 82% 72%,
+      rgba(184, 58, 58, .045),
+      transparent 24%
+    ),
+    linear-gradient(
+      180deg,
+      #0d0a11,
+      #100c13 45%,
+      #0d0a11
+    );
+
+  border-top: 1px solid rgba(199, 179, 122, .12);
+  border-bottom: 1px solid rgba(199, 179, 122, .12);
+}
+
+
+/* =========================================================
+   MARA ARCHIVE HEADER
+   ========================================================= */
+
+.mara-archive-header {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 65px;
+  padding: 50px 45px;
+  border-top: 1px solid rgba(199, 179, 122, .42);
+  border-bottom: 1px solid rgba(199, 179, 122, .22);
+  text-align: center;
+}
+
+.mara-archive-header::before {
+  content: "UNOFFICIAL RECORD";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 14px;
+
+  background: var(--bg);
+  color: #8f4650;
+
+  font-family: monospace;
+  font-size: .6rem;
+  letter-spacing: .16em;
+  white-space: nowrap;
+}
+
+.archive-kicker {
+  margin: 0 0 16px;
+  color: var(--gold);
+  font-family: monospace;
+  font-size: .67rem;
+  letter-spacing: .16em;
+}
+
+.mara-archive-header h2 {
+  margin: 0 0 25px;
+  color: var(--cream);
+  font-family: Cinzel, serif;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.mara-archive-intro {
+  margin: 0 auto 30px;
+  color: #d5cbd3;
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.mara-archive-classification {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mara-archive-classification span {
+  padding: 7px 10px;
+  border: 1px solid rgba(199, 179, 122, .22);
+  color: #847985;
+  font-family: monospace;
+  font-size: .6rem;
+  letter-spacing: .12em;
+}
+
+.mara-archive-classification span:last-child {
+  border-color: rgba(184, 58, 58, .3);
+  color: #a85a62;
+}
+
+
+/* =========================================================
+   MARA MAP RECORD
+   ========================================================= */
+
+.mara-map-panel {
+  margin-bottom: 85px;
+  border: 1px solid rgba(199, 179, 122, .28);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(31, 24, 36, .58),
+      rgba(10, 8, 13, .96)
+    );
+  box-shadow: 0 25px 65px rgba(0, 0, 0, .35);
+}
+
+.mara-map-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+
+  border-bottom: 1px solid rgba(199, 179, 122, .2);
+
+  color: #938694;
+  background: rgba(0, 0, 0, .18);
+
+  font-family: monospace;
+  font-size: .63rem;
+  letter-spacing: .11em;
+}
+
+.mara-map-label span:last-child {
+  color: #a85a62;
+}
+
+
+/* TEMPORARY MAP PLACEHOLDER */
+
+.mara-map-placeholder {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 30px;
+  overflow: hidden;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(13, 10, 17, .5),
+      rgba(13, 10, 17, .72)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 34px,
+      rgba(199, 179, 122, .025) 34px,
+      rgba(199, 179, 122, .025) 35px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 34px,
+      rgba(199, 179, 122, .02) 34px,
+      rgba(199, 179, 122, .02) 35px
+    );
+}
+
+.mara-map-placeholder::before {
+  content: "MAP RECORD UNAVAILABLE";
+  position: absolute;
+  transform: rotate(-7deg);
+
+  color: rgba(184, 58, 58, .14);
+  font-family: Cinzel, serif;
+  font-size: clamp(2rem, 6vw, 5.2rem);
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.mara-map-placeholder p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 10px;
+  color: var(--cream);
+
+  font-family: Cinzel, serif;
+  font-size: 1.15rem;
+  letter-spacing: .08em;
+}
+
+.mara-map-placeholder > span {
+  position: relative;
+  z-index: 1;
+
+  color: #766d77;
+  font-family: monospace;
+  font-size: .68rem;
+  letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   ALTERED RECORDS HEADING
+   ========================================================= */
+
+.mara-record-heading {
+  max-width: 760px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.mara-record-heading h3 {
+  margin: 8px 0 0;
+
+  color: var(--cream);
+  font-family: Cinzel, serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   MARA RECORD CARDS
+   ========================================================= */
+
+.mara-record-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.mara-record-card {
+  position: relative;
+  min-width: 0;
+  min-height: 315px;
+
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid rgba(199, 179, 122, .18);
+  border-left: 2px solid rgba(143, 70, 80, .58);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(28, 21, 32, .76),
+      rgba(11, 9, 14, .96)
+    );
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.mara-record-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(199, 179, 122, .36);
+  border-left-color: #8f4650;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(34, 25, 38, .86),
+      rgba(11, 9, 14, .98)
+    );
+}
+
+.mara-record-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+
+  margin-bottom: 28px;
+
+  color: #8f4650;
+  font-family: monospace;
+  font-size: .61rem;
+  letter-spacing: .11em;
+}
+
+.mara-record-meta span:first-child {
+  color: var(--gold);
+}
+
+.mara-record-meta span:last-child {
+  text-align: right;
+}
+
+.mara-record-card h3 {
+  margin: 0 0 16px;
+
+  color: var(--cream);
+  font-family: Cinzel, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.mara-record-card > p:not(.mara-note) {
+  margin: 0;
+
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   MARA'S NOTES
+   ========================================================= */
+
+.mara-note {
+  position: relative;
+  margin: auto 0 0;
+  padding: 26px 8px 0 24px;
+
+  color: #b98c91;
+  font-family: 'Libre Baskerville', serif;
+  font-size: .9rem;
+  font-style: italic;
+  line-height: 1.7;
+
+  transform: rotate(-.4deg);
+}
+
+.mara-note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25px;
+
+  width: 13px;
+  height: 1px;
+
+  background: #8f4650;
+}
+
+
+/* =========================================================
+   WESTERN FRAGMENT
+   ========================================================= */
+
+.mara-record-fragment {
+  grid-column: 1 / -1;
+  min-height: 360px;
+
+  border-color: rgba(143, 70, 80, .42);
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(184, 58, 58, .065),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(29, 20, 31, .88),
+      rgba(9, 7, 12, .98)
+    );
+}
+
+.fragment-message {
+  width: fit-content;
+  margin: 34px 0 10px;
+  padding: 13px 18px;
+
+  border: 1px solid rgba(184, 58, 58, .42);
+
+  color: #b45b64;
+  background: rgba(184, 58, 58, .045);
+
+  font-family: monospace;
+  font-size: .72rem;
+  letter-spacing: .2em;
+
+  transform: rotate(-1deg);
+}
+
+
+/* =========================================================
+   END OF MARA ARCHIVE
+   ========================================================= */
+
+.mara-archive-end {
+  position: relative;
+  margin-top: 70px;
+  padding: 35px;
+
+  border-top: 1px solid rgba(199, 179, 122, .2);
+  border-bottom: 1px solid rgba(199, 179, 122, .1);
+
+  text-align: center;
+}
+
+.mara-archive-end > span {
+  color: #8f4650;
+  font-family: monospace;
+  font-size: .62rem;
+  letter-spacing: .16em;
+}
+
+.mara-archive-end p {
+  margin: 12px 0 25px;
+
+  color: #756c76;
+  font-family: monospace;
+  font-size: .67rem;
+  letter-spacing: .08em;
+}
+
+.west-marker {
+  color: var(--cream);
+  font-family: Cinzel, serif;
+  font-size: 1.25rem;
+  letter-spacing: .22em;
+}
+
+
+/* =========================================================
+   MARA ARCHIVE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .mara-archive {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .mara-archive-header {
+    padding: 42px 25px;
+  }
+
+  .mara-map-label {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mara-map-placeholder {
+    min-height: 330px;
+  }
+
+  .mara-record-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mara-record-fragment {
+    grid-column: auto;
+  }
+
+  .mara-record-card {
+    min-height: 290px;
+    padding: 28px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .mara-archive {
+    margin-bottom: 75px;
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .mara-archive-header {
+    padding: 38px 16px;
+  }
+
+  .mara-archive-classification {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mara-map-placeholder {
+    min-height: 280px;
+    padding: 35px 18px;
+  }
+
+  .mara-record-card {
+    padding: 24px;
+  }
+
+  .mara-record-meta {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mara-record-meta span:last-child {
+    text-align: left;
+  }
+
+  .mara-archive-end {
+    padding: 30px 18px;
+  }
+}
 
 /* =========================================================
    RESPONSIVE
