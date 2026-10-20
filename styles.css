@@ -953,6 +953,28 @@ footer b {
 .veyr-copy {
   max-width: none;
    }
+   .veyr-hero {
+  padding-top: 125px;
+  padding-bottom: 50px;
+   }
+
+.archive-label {
+  flex-direction: column;
+  gap: 6px;
+   }
+
+.location-grid {
+  grid-template-columns: 1fr;
+   }
+
+.location-card {
+  padding: 26px;
+   }
+
+.veyr-archive-map,
+.veyr-locations {
+  padding-bottom: 75px;
+   }
 }
 
 
