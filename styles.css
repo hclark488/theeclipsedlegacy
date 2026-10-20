@@ -696,6 +696,222 @@ footer b {
   letter-spacing: .12em;
 }
 
+/* ==================================================
+   EXPLORE VEYR PAGE
+   ================================================== */
+
+.veyr-page {
+  background: var(--bg);
+}
+
+
+/* HERO */
+
+.veyr-hero {
+  padding-top: 150px;
+  padding-bottom: 70px;
+  text-align: center;
+  max-width: 900px;
+}
+
+.veyr-hero h1 {
+  margin: 12px 0 20px;
+  font-family: Cinzel, serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--cream);
+}
+
+.veyr-hero-quote {
+  margin: 0 auto 28px;
+  color: var(--gold);
+  font-family: Libre Baskerville, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.veyr-intro {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+
+/* ARCHIVE MAP */
+
+.veyr-archive-map {
+  padding-bottom: 110px;
+}
+
+.archive-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+  border: 1px solid rgba(199, 179, 122, .35);
+  border-bottom: 0;
+  color: var(--gold);
+  background: #130f15;
+  font-family: monospace;
+  font-size: .68rem;
+  letter-spacing: .12em;
+}
+
+.archive-map-frame {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(199, 179, 122, .55);
+  background: #171219;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .45);
+  overflow: hidden;
+}
+
+.archive-map-frame img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.archive-note {
+  max-width: 700px;
+  margin: 18px auto 0;
+  color: #776e78;
+  font-family: monospace;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  line-height: 1.7;
+  text-align: center;
+}
+
+
+/* LOCATION INTRO */
+
+.veyr-locations {
+  padding-top: 20px;
+  padding-bottom: 110px;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 10px 0 18px;
+  font-family: Cinzel, serif;
+  font-size: clamp(2.3rem, 4vw, 4rem);
+  font-weight: 400;
+  color: var(--cream);
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+
+/* LOCATION CARDS */
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.location-card {
+  position: relative;
+  min-width: 0;
+  padding: 34px;
+  border: 1px solid rgba(199, 179, 122, .24);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(31, 24, 36, .72),
+      rgba(13, 10, 17, .92)
+    );
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(199, 179, 122, .65);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(38, 29, 43, .82),
+      rgba(13, 10, 17, .96)
+    );
+}
+
+.location-type {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-family: monospace;
+  font-size: .65rem;
+  letter-spacing: .14em;
+}
+
+.location-card h3 {
+  margin: 0 0 16px;
+  font-family: Cinzel, serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--cream);
+}
+
+.location-card > p:not(.location-type) {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.location-record {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(199, 179, 122, .18);
+  color: #857b86;
+  font-family: monospace;
+  font-size: .63rem;
+  letter-spacing: .08em;
+}
+
+
+/* END OF PUBLIC ARCHIVE */
+
+.archive-end {
+  margin-bottom: 100px;
+  padding: 35px;
+  border: 1px solid rgba(199, 179, 122, .28);
+  background: #100c12;
+  text-align: center;
+}
+
+.archive-end p {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-family: monospace;
+  font-size: .7rem;
+  letter-spacing: .14em;
+}
+
+.archive-end span {
+  color: #625963;
+  font-family: monospace;
+  font-size: .68rem;
+  letter-spacing: .08em;
+}
 /* =========================================================
    RESPONSIVE
    ========================================================= */
