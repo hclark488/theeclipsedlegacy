@@ -295,7 +295,8 @@ h3 {
   margin-top: 40px;
 }
 
-.orders > div {
+.orders > div,
+.orders > .order-card-link {
   min-height: 340px;
   padding: 20px;
   display: grid;
@@ -1682,7 +1683,6 @@ footer b {
   }
 
 }
-}
 
 
 /* =========================================================
@@ -2361,13 +2361,17 @@ footer b {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  min-width: 0;
 }
 
-.order-hero-symbol img {
+body.order-page .order-hero .order-hero-symbol img {
   display: block;
-  width: min(100%, 330px);
+  width: 100%;
+  max-width: 330px;
   height: auto;
   object-fit: contain;
+  margin: 0 auto;
 
   filter:
     drop-shadow(0 20px 45px rgba(0, 0, 0, 0.55))
@@ -2462,8 +2466,9 @@ footer b {
     padding-bottom: 65px;
   }
 
-  .order-hero-symbol img {
-    width: min(68vw, 270px);
+  body.order-page .order-hero .order-hero-symbol img {
+    width: 68vw;
+    max-width: 270px;
   }
 
   .order-hero-copy {
@@ -2481,12 +2486,5 @@ footer b {
 }
 /* =========================================================
    ORDER CARD LINK LAYOUT FIX
+   Clickable cards inherit the original Order card grid above.
    ========================================================= */
-
-.orders > .order-card-link {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  min-width: 0;
-  width: 100%;
-}
