@@ -2488,3 +2488,283 @@ body.order-page .order-hero .order-hero-symbol img {
    ORDER CARD LINK LAYOUT FIX
    Clickable cards inherit the original Order card grid above.
    ========================================================= */
+
+/* =========================================================
+   ORDER PERSONNEL ARCHIVES
+   ========================================================= */
+
+.personnel-volume {
+  margin-top: 42px;
+}
+
+.personnel-volume-open {
+  padding-top: 6px;
+}
+
+.personnel-volume-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(199, 179, 122, 0.18);
+}
+
+.personnel-book-label {
+  margin: 0 0 7px;
+  color: #d26969;
+  font-family: Cinzel, Georgia, serif;
+  font-size: .68rem;
+  letter-spacing: .16em;
+}
+
+.personnel-volume h3 {
+  margin: 0;
+  color: var(--cream);
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+.archive-status {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(184, 58, 58, .5);
+  color: #d26969;
+  font-family: monospace;
+  font-size: .66rem;
+  letter-spacing: .1em;
+}
+
+.personnel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.personnel-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, .09);
+  background:
+    linear-gradient(180deg, rgba(184, 58, 58, .055), rgba(255, 255, 255, .012));
+}
+
+.personnel-clearance {
+  margin: 0 0 10px !important;
+  color: #d26969 !important;
+  font-family: monospace;
+  font-size: .62rem !important;
+  letter-spacing: .12em;
+}
+
+.personnel-card h4,
+.spoiler-warning h4 {
+  margin: 0 0 16px;
+  color: var(--cream);
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.12rem;
+  font-weight: 500;
+}
+
+.personnel-card > p:last-child {
+  margin: 17px 0 0;
+  color: #b9aeb9;
+  line-height: 1.65;
+}
+
+.personnel-meta {
+  margin: 0;
+}
+
+.personnel-meta > div {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+  padding: 7px 0;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+.personnel-meta dt {
+  color: #746b75;
+  font-family: monospace;
+  font-size: .62rem;
+  letter-spacing: .08em;
+}
+
+.personnel-meta dd {
+  margin: 0;
+  color: #d4c9d4;
+  font-size: .8rem;
+}
+
+.restricted-records {
+  margin-top: 34px;
+  border: 1px solid rgba(184, 58, 58, .32);
+  background: rgba(24, 10, 13, .62);
+}
+
+.restricted-records summary {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 22px 24px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.restricted-records summary::-webkit-details-marker {
+  display: none;
+}
+
+.restricted-records summary:hover {
+  background: rgba(184, 58, 58, .055);
+}
+
+.restricted-icon {
+  color: #d26969;
+  font-size: 1rem;
+}
+
+.restricted-summary-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.restricted-summary-copy strong {
+  color: var(--cream);
+  font-family: Cinzel, Georgia, serif;
+  font-size: .78rem;
+  letter-spacing: .1em;
+}
+
+.restricted-summary-copy small,
+.restricted-action {
+  color: #8b7d86;
+  font-family: monospace;
+  font-size: .62rem;
+  letter-spacing: .08em;
+}
+
+.restricted-action {
+  color: #d26969;
+}
+
+.restricted-records[open] .restricted-action {
+  font-size: 0;
+}
+
+.restricted-records[open] .restricted-action::after {
+  content: "RECORDS UNSEALED";
+  font-size: .62rem;
+}
+
+.restricted-content {
+  padding: 0 24px 26px;
+  border-top: 1px solid rgba(184, 58, 58, .18);
+}
+
+.spoiler-warning {
+  max-width: 760px;
+  padding: 24px 0 4px;
+}
+
+.spoiler-warning p:last-child {
+  color: #9f929f;
+  line-height: 1.65;
+}
+
+.personnel-grid-restricted {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.restricted-personnel-card {
+  border-color: rgba(184, 58, 58, .2);
+}
+
+.sealed-volumes {
+  display: grid;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.personnel-volume-sealed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 0;
+  padding: 22px 24px;
+  border: 1px solid rgba(255, 255, 255, .055);
+  background: rgba(255, 255, 255, .018);
+  opacity: .58;
+}
+
+.personnel-volume-sealed p:not(.personnel-book-label) {
+  margin: 8px 0 0;
+  color: #7d737d;
+  font-size: .82rem;
+}
+
+.sealed-stamp {
+  flex: 0 0 auto;
+  min-width: 150px;
+  padding: 10px 14px;
+  border: 1px solid rgba(199, 179, 122, .24);
+  text-align: center;
+}
+
+.sealed-stamp span,
+.sealed-stamp small {
+  display: block;
+  font-family: monospace;
+  letter-spacing: .1em;
+}
+
+.sealed-stamp span {
+  color: #9c8c6b;
+  font-size: .66rem;
+}
+
+.sealed-stamp small {
+  margin-top: 4px;
+  color: #6f666f;
+  font-size: .58rem;
+}
+
+
+/* ORDER PERSONNEL ARCHIVES // MOBILE */
+
+@media (max-width: 820px) {
+
+  .personnel-grid,
+  .personnel-grid-restricted {
+    grid-template-columns: 1fr;
+  }
+
+  .personnel-volume-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .restricted-records summary {
+    grid-template-columns: auto 1fr;
+  }
+
+  .restricted-action {
+    grid-column: 2;
+  }
+
+  .personnel-volume-sealed {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sealed-stamp {
+    width: 100%;
+  }
+
+}
