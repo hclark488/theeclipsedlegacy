@@ -3033,3 +3033,112 @@ body.order-page .order-hero .order-hero-symbol img {
 .iron-page .order-archive-tag {
   color: #6f9abb !important;
 }
+  background: rgba(143, 123, 147, .035);
+}
+
+.eclipsed-page .record small {
+  color: #665b69;
+}
+
+.erased-record {
+  position: relative;
+}
+
+.erased-record::after {
+  content: "ERASED";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: rgba(162,75,86,.16);
+  font-family: monospace;
+  font-size: clamp(1.3rem, 3vw, 2.2rem);
+  letter-spacing: .18em;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.eclipsed-doctrine {
+  margin: 35px 0 0;
+  padding: 25px 28px;
+  border-top: 1px solid rgba(143,123,147,.22);
+  border-bottom: 1px solid rgba(143,123,147,.12);
+  background: rgba(143,123,147,.025);
+}
+
+.eclipsed-doctrine p {
+  margin: 0;
+  color: #c9bdca;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(.82rem, 1.6vw, 1rem);
+  letter-spacing: .08em;
+  line-height: 1.9;
+}
+
+.eclipsed-doctrine p + p {
+  color: var(--eclipsed);
+}
+
+.eclipsed-page .order-members-section {
+  border-top-color: rgba(143,123,147,.12);
+}
+
+.eclipsed-page .personnel-volume-heading {
+  border-bottom-color: rgba(143,123,147,.18);
+}
+
+.eclipsed-page .personnel-card {
+  border-color: rgba(143,123,147,.18);
+  background:
+    linear-gradient(180deg, rgba(143,123,147,.055), rgba(255,255,255,.01));
+}
+
+.eclipsed-page .personnel-card.erased-record {
+  border-color: rgba(162,75,86,.24);
+}
+
+.eclipsed-page .sealed-stamp {
+  border-color: rgba(143,123,147,.2);
+}
+
+.eclipsed-page .sealed-stamp span {
+  color: #8f7b93;
+}
+
+.eclipsed-page .personnel-volume-sealed {
+  border-color: rgba(143,123,147,.08);
+}
+
+.eclipsed-corruption {
+  position: relative;
+  margin: 0 auto 48px;
+  max-width: 820px;
+  padding: 18px 22px;
+  border: 1px solid rgba(162,75,86,.26);
+  background: rgba(162,75,86,.035);
+  color: #817383;
+  font-family: monospace;
+  font-size: .66rem;
+  letter-spacing: .11em;
+  line-height: 1.9;
+}
+
+.eclipsed-corruption strong {
+  color: #ad5b65;
+  font-weight: 400;
+}
+
+.eclipsed-page footer {
+  border-top-color: rgba(143,123,147,.14);
+}
+
+@media (max-width: 760px) {
+  .erased-record::after {
+    top: 14px;
+    right: 12px;
+    font-size: 1rem;
+  }
+
+  .eclipsed-doctrine {
+    padding: 22px 18px;
+  }
+}
