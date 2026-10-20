@@ -2262,3 +2262,35 @@ footer b {
   height: auto;
   object-fit: contain;
 }
+/* =========================================================
+   BOOK RELEASE STATUS
+   ========================================================= */
+
+.release-status {
+  display: block;
+  margin: 9px 0 8px;
+  color: var(--gold);
+  font-family: 'Libre Baskerville', serif;
+  font-size: .7rem;
+  line-height: 1.5;
+}
+
+.preorder-link {
+  display: block;
+  width: fit-content;
+  margin-top: 10px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.secondary-book-link {
+  display: block;
+  width: fit-content;
+  margin-top: 7px;
+  color: #8f8490;
+}
+
+.preorder-link:hover,
+.secondary-book-link:hover {
+  color: var(--cream);
+}
