@@ -2958,3 +2958,71 @@ body.order-page .order-hero .order-hero-symbol img {
       rgba(255, 255, 255, .012)
     );
 }
+
+
+/* =========================================================
+   IRON ORDER ARCHIVE
+   ========================================================= */
+
+.iron-page {
+  background:
+    radial-gradient(
+      circle at 72% 22%,
+      rgba(77, 111, 138, 0.18),
+      transparent 32%
+    ),
+    #0d0a11;
+}
+
+.iron-page .order-hero-symbol img {
+  filter:
+    drop-shadow(0 20px 45px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 30px rgba(77, 111, 138, 0.18));
+}
+
+.iron-page .order-archive-tag,
+.iron-page .personnel-book-label,
+.iron-page .personnel-clearance,
+.iron-page .restricted-icon,
+.iron-page .restricted-action,
+.iron-page .spoiler-warning .personnel-clearance,
+.iron-page .restricted-records[open] .restricted-action {
+  color: #6f9abb !important;
+}
+
+.iron-page .archive-status {
+  border-color: rgba(77, 111, 138, .62);
+  color: #6f9abb;
+}
+
+.iron-page .personnel-card {
+  background:
+    linear-gradient(180deg, rgba(77, 111, 138, .08), rgba(255, 255, 255, .012));
+}
+
+.iron-page .restricted-records {
+  border-color: rgba(77, 111, 138, .55) !important;
+  background: rgba(10, 16, 22, .72);
+}
+
+.iron-page .restricted-records summary {
+  border-color: rgba(77, 111, 138, .32) !important;
+}
+
+.iron-page .restricted-records summary:hover {
+  background: rgba(77, 111, 138, .07);
+}
+
+.iron-page .restricted-content {
+  border-top-color: rgba(77, 111, 138, .32) !important;
+}
+
+.iron-page .restricted-personnel-card {
+  border-color: rgba(77, 111, 138, .40) !important;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(77, 111, 138, .09),
+      rgba(255, 255, 255, .012)
+    );
+}
