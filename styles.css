@@ -2294,3 +2294,32 @@ footer b {
 .secondary-book-link:hover {
   color: var(--cream);
 }
+/* =========================================================
+   CLICKABLE ORDER CARDS
+   ========================================================= */
+
+.order-card-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.order-card-link:visited {
+  color: inherit;
+}
+
+.order-card-link {
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.order-card-link:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.12);
+}
+
+.order-card-link:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 5px;
+}
