@@ -1300,6 +1300,10 @@ footer b {
   margin-top: 42px;
 }
 
+/* Final Bellfall record spans the archive */
+.evidence-file:nth-child(5) {
+  grid-column: 1 / -1;
+}
 
 /* INDIVIDUAL EVIDENCE DOCUMENT */
 
