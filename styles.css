@@ -67,6 +67,12 @@ nav a {
   letter-spacing: .13em !important;
 }
 
+.archive-bottom-return {
+  padding-top: 36px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
 
 /* =========================================================
    HERO
