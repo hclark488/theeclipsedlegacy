@@ -2028,3 +2028,222 @@ footer b {
     gap: 8px;
   }
 }
+/* =========================================================
+   AWAKEN YOUR MARK // HOMEPAGE INVITATION
+   ========================================================= */
+
+.awakening-invitation {
+  position: relative;
+  padding-top: 35px;
+  padding-bottom: 105px;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(111, 74, 142, .08),
+      transparent 38%
+    ),
+    #130e16;
+  border-bottom: 1px solid rgba(199, 179, 122, .12);
+}
+
+.awakening-invitation-frame {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 68px 55px 58px;
+  text-align: center;
+
+  border: 1px solid rgba(199, 179, 122, .32);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(31, 24, 36, .72),
+      rgba(13, 10, 17, .94)
+    );
+
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, .28),
+    inset 0 0 50px rgba(199, 179, 122, .018);
+}
+
+
+/* ceremonial line */
+
+.awakening-invitation-frame::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 110px;
+  height: 1px;
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+}
+
+
+/* Crown classification label */
+
+.awakening-invitation .eyebrow {
+  margin: 0 0 17px;
+}
+
+
+/* main title */
+
+.awakening-invitation h2 {
+  margin: 0 0 27px;
+
+  color: var(--cream);
+
+  font-family: Cinzel, serif;
+  font-size: clamp(2.3rem, 5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: .03em;
+}
+
+
+/* explanatory copy */
+
+.awakening-invitation-copy {
+  max-width: 650px;
+  margin: 0 auto 24px;
+
+  color: var(--muted);
+
+  font-family: 'Libre Baskerville', serif;
+  font-size: .98rem;
+  line-height: 1.9;
+}
+
+
+/* twelve choices line */
+
+.awakening-invitation-prompt {
+  margin: 0 auto 32px;
+
+  color: var(--cream);
+
+  font-family: 'Libre Baskerville', serif;
+  font-size: .95rem;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+
+/* assessment button */
+
+.awakening-invitation-button {
+  display: inline-block;
+
+  padding: 14px 24px;
+
+  border: 1px solid var(--gold);
+
+  background: transparent;
+  color: var(--gold);
+
+  font-family: Cinzel, serif;
+  font-size: .7rem;
+  letter-spacing: .16em;
+  text-decoration: none;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.awakening-invitation-button:hover {
+  background: var(--gold);
+  color: #151018;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, .28),
+    0 0 25px rgba(199, 179, 122, .08);
+}
+
+
+/* tiny Crown record line */
+
+.awakening-invitation-record {
+  margin: 34px 0 0;
+
+  color: #665d69;
+
+  font-family: monospace;
+  font-size: .59rem;
+  letter-spacing: .13em;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   AWAKEN YOUR MARK // MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .awakening-invitation {
+    padding-top: 25px;
+    padding-bottom: 75px;
+  }
+
+  .awakening-invitation-frame {
+    padding: 62px 32px 50px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .awakening-invitation {
+    padding-top: 18px;
+    padding-bottom: 65px;
+  }
+
+  .awakening-invitation-frame {
+    padding: 58px 22px 44px;
+  }
+
+  .awakening-invitation-frame::before {
+    top: 27px;
+    width: 82px;
+  }
+
+  .awakening-invitation h2 {
+    font-size: 2.25rem;
+    line-height: 1.15;
+  }
+
+  .awakening-invitation-copy {
+    font-size: .9rem;
+    line-height: 1.8;
+  }
+
+  .awakening-invitation-prompt {
+    font-size: .88rem;
+  }
+
+  .awakening-invitation-button {
+    width: 100%;
+    padding: 15px 14px;
+  }
+
+  .awakening-invitation-record {
+    font-size: .52rem;
+    letter-spacing: .1em;
+  }
+
+}
