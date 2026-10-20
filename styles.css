@@ -2323,3 +2323,159 @@ footer b {
   outline: 1px solid var(--gold);
   outline-offset: 5px;
 }
+/* =========================================================
+   ORDER ARCHIVES
+   ========================================================= */
+
+.order-page {
+  min-height: 100vh;
+  background: #0d0a11;
+}
+
+.ember-page {
+  background:
+    radial-gradient(
+      circle at 72% 22%,
+      rgba(184, 58, 58, 0.15),
+      transparent 32%
+    ),
+    #0d0a11;
+}
+
+.order-archive {
+  padding-top: 90px;
+}
+
+.order-hero {
+  min-height: 650px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  display: grid;
+  grid-template-columns: minmax(240px, 390px) 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.order-hero-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-hero-symbol img {
+  display: block;
+  width: min(100%, 330px);
+  height: auto;
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 20px 45px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 30px rgba(184, 58, 58, 0.12));
+}
+
+.order-hero-copy h1 {
+  margin: 0.08em 0 0.16em;
+
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 0.95;
+
+  color: var(--cream);
+}
+
+.order-archive-tag {
+  margin: 0 0 24px;
+
+  color: #d26969;
+
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.order-intro {
+  max-width: 720px;
+
+  color: #c9bec9;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.order-hero-copy .record {
+  margin-top: 34px;
+}
+
+.order-members-section {
+  padding: 85px 0 110px;
+
+  border-top: 1px solid rgba(199, 179, 122, 0.13);
+
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.order-members-section h2 {
+  margin-top: 8px;
+}
+
+.order-members-placeholder {
+  max-width: 700px;
+  margin-top: 38px;
+  padding: 28px;
+
+  border-left: 1px solid #b83a3a;
+
+  background: rgba(184, 58, 58, 0.04);
+}
+
+.order-members-placeholder span {
+  color: #d26969;
+
+  font-family: Cinzel, Georgia, serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+}
+
+.order-members-placeholder p {
+  margin: 9px 0 0;
+
+  color: #918691;
+}
+
+
+/* ORDER ARCHIVES // MOBILE */
+
+@media (max-width: 760px) {
+
+  .order-archive {
+    padding-top: 70px;
+  }
+
+  .order-hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+    gap: 35px;
+
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+
+  .order-hero-symbol img {
+    width: min(68vw, 270px);
+  }
+
+  .order-hero-copy {
+    text-align: left;
+  }
+
+  .order-hero-copy h1 {
+    font-size: clamp(3.7rem, 18vw, 6rem);
+  }
+
+  .order-members-section {
+    padding: 65px 0 85px;
+  }
+
+}
