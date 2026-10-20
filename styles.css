@@ -2247,3 +2247,18 @@ footer b {
   }
 
 }
+/* =========================================================
+   OFFICIAL ECLIPSED LEGACY HERO EMBLEM
+   ========================================================= */
+
+.eclipse-logo {
+  width: min(520px, 72vw);
+  margin: 20px auto 12px;
+}
+
+.eclipse-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
