@@ -413,6 +413,7 @@ h3 {
   }
 }
 
+
 /* =========================================================
    QUOTE
    ========================================================= */
@@ -466,15 +467,6 @@ h3 {
   border-radius: 2px;
 }
 
-.author-photo img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 2px;
-}
-
 .author h2 {
   margin-bottom: 20px;
 }
@@ -511,6 +503,7 @@ h3 {
   color: #151018;
   transform: translateY(-2px);
 }
+
 
 /* =========================================================
    FOOTER
@@ -619,9 +612,10 @@ footer b {
   margin-top: 8px;
 }
 
-/* =========================
+
+/* =========================================================
    VEYR SECTION
-   ========================= */
+   ========================================================= */
 
 .veyr-section {
   display: grid;
@@ -696,17 +690,19 @@ footer b {
   letter-spacing: .12em;
 }
 
-/* ==================================================
+
+/* =========================================================
    EXPLORE VEYR PAGE
-   ================================================== */
+   ========================================================= */
 
 .veyr-page {
   background: var(--bg);
 }
 
-/* ==================================================
+
+/* =========================================================
    CARTOGRAPHIC ARCHIVES
-   ================================================== */
+   ========================================================= */
 
 .cartographic-archives {
   padding-top: 10px;
@@ -780,7 +776,7 @@ footer b {
 }
 
 
-/* BUTTONS */
+/* ARCHIVE BUTTONS */
 
 .archive-button {
   display: inline-block;
@@ -834,7 +830,6 @@ footer b {
   position: absolute;
   inset: 0;
   pointer-events: none;
-
   background:
     repeating-linear-gradient(
       -45deg,
@@ -865,7 +860,9 @@ footer b {
 }
 
 
-/* HERO */
+/* =========================================================
+   EXPLORE VEYR HERO
+   ========================================================= */
 
 .veyr-hero {
   padding-top: 150px;
@@ -886,7 +883,7 @@ footer b {
 .veyr-hero-quote {
   margin: 0 auto 28px;
   color: var(--gold);
-  font-family: Libre Baskerville, serif;
+  font-family: 'Libre Baskerville', serif;
   font-style: italic;
   font-size: 1.05rem;
   line-height: 1.8;
@@ -900,7 +897,9 @@ footer b {
 }
 
 
-/* ARCHIVE MAP */
+/* =========================================================
+   ARCHIVE MAP
+   ========================================================= */
 
 .veyr-archive-map {
   padding-bottom: 110px;
@@ -949,7 +948,9 @@ footer b {
 }
 
 
-/* LOCATION INTRO */
+/* =========================================================
+   LOCATION INTRO
+   ========================================================= */
 
 .veyr-locations {
   padding-top: 20px;
@@ -976,7 +977,9 @@ footer b {
 }
 
 
-/* LOCATION CARDS */
+/* =========================================================
+   LOCATION CARDS
+   ========================================================= */
 
 .location-grid {
   display: grid;
@@ -1048,7 +1051,9 @@ footer b {
 }
 
 
-/* END OF PUBLIC ARCHIVE */
+/* =========================================================
+   END OF PUBLIC ARCHIVE
+   ========================================================= */
 
 .archive-end {
   margin-bottom: 100px;
@@ -1072,6 +1077,8 @@ footer b {
   font-size: .68rem;
   letter-spacing: .08em;
 }
+
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
@@ -1097,44 +1104,54 @@ footer b {
   .author {
     grid-template-columns: 1fr;
   }
-   
+
   .author-photo {
-  width: 100%;
-  max-width: 320px;
-  height: 320px;
-  margin: 0 auto;
-   }
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+    margin: 0 auto;
+  }
 
-   .veyr-section {
-  grid-template-columns: 1fr;
-  gap: 45px;
-   }
+  .veyr-section {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
 
-.veyr-copy {
-  max-width: none;
-   }
-   .veyr-hero {
-  padding-top: 125px;
-  padding-bottom: 50px;
-   }
+  .veyr-copy {
+    max-width: none;
+  }
 
-.archive-label {
-  flex-direction: column;
-  gap: 6px;
-   }
+  .veyr-hero {
+    padding-top: 125px;
+    padding-bottom: 50px;
+  }
 
-.location-grid {
-  grid-template-columns: 1fr;
-   }
+  .archive-label {
+    flex-direction: column;
+    gap: 6px;
+  }
 
-.location-card {
-  padding: 26px;
-   }
+  .archive-grid {
+    grid-template-columns: 1fr;
+  }
 
-.veyr-archive-map,
-.veyr-locations {
-  padding-bottom: 75px;
-   }
+  .archive-card {
+    min-height: 280px;
+    padding: 26px;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-card {
+    padding: 26px;
+  }
+
+  .veyr-archive-map,
+  .veyr-locations {
+    padding-bottom: 75px;
+  }
 }
 
 
