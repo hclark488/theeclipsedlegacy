@@ -1305,6 +1305,11 @@ footer b {
   grid-column: 1 / -1;
 }
 
+/* Final Liora record spans the archive */
+.lead-grid .lead-file:nth-child(3):last-child {
+  grid-column: 1 / -1;
+}
+
 /* INDIVIDUAL EVIDENCE DOCUMENT */
 
 .evidence-file {
