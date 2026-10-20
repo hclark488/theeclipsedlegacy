@@ -2890,38 +2890,71 @@ body.order-page .order-hero .order-hero-symbol img {
 .verdant-page .restricted-personnel-card {
   border-color: rgba(79, 122, 78, .24);
 }
+
+
 /* =========================================================
-   VERDANT ORDER — COMPLETE ACCENT OVERRIDE
+   ASTRAL ORDER ARCHIVE
    ========================================================= */
 
-.verdant-page .personnel-book-label,
-.verdant-page .personnel-clearance,
-.verdant-page .restricted-icon,
-.verdant-page .restricted-action,
-.verdant-page .spoiler-warning .personnel-clearance,
-.verdant-page .restricted-records[open] .restricted-action {
-  color: #72a86f !important;
+.astral-page {
+  background:
+    radial-gradient(
+      circle at 72% 22%,
+      rgba(198, 154, 59, 0.16),
+      transparent 32%
+    ),
+    #0d0a11;
 }
 
-.verdant-page .restricted-records {
-  border-color: rgba(79, 122, 78, .55) !important;
-  background: rgba(10, 20, 12, .68);
+.astral-page .order-hero-symbol img {
+  filter:
+    drop-shadow(0 20px 45px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 30px rgba(198, 154, 59, 0.16));
 }
 
-.verdant-page .restricted-records summary {
-  border-color: rgba(79, 122, 78, .30) !important;
+.astral-page .order-archive-tag,
+.astral-page .personnel-book-label,
+.astral-page .personnel-clearance,
+.astral-page .restricted-icon,
+.astral-page .restricted-action,
+.astral-page .spoiler-warning .personnel-clearance,
+.astral-page .restricted-records[open] .restricted-action {
+  color: #c69a3b !important;
 }
 
-.verdant-page .restricted-content {
-  border-top-color: rgba(79, 122, 78, .30) !important;
+.astral-page .archive-status {
+  border-color: rgba(198, 154, 59, .58);
+  color: #c69a3b;
 }
 
-.verdant-page .restricted-personnel-card {
-  border-color: rgba(79, 122, 78, .38) !important;
+.astral-page .personnel-card {
+  background:
+    linear-gradient(180deg, rgba(198, 154, 59, .07), rgba(255, 255, 255, .012));
+}
+
+.astral-page .restricted-records {
+  border-color: rgba(198, 154, 59, .50) !important;
+  background: rgba(24, 19, 9, .68);
+}
+
+.astral-page .restricted-records summary {
+  border-color: rgba(198, 154, 59, .30) !important;
+}
+
+.astral-page .restricted-records summary:hover {
+  background: rgba(198, 154, 59, .06);
+}
+
+.astral-page .restricted-content {
+  border-top-color: rgba(198, 154, 59, .30) !important;
+}
+
+.astral-page .restricted-personnel-card {
+  border-color: rgba(198, 154, 59, .36) !important;
   background:
     linear-gradient(
       180deg,
-      rgba(79, 122, 78, .08),
+      rgba(198, 154, 59, .075),
       rgba(255, 255, 255, .012)
     );
 }
