@@ -507,6 +507,34 @@ h3 {
   max-width: 700px;
 }
 
+.author-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.author-link {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  font-family: Cinzel, serif;
+  font-size: .65rem;
+  letter-spacing: .12em;
+  text-decoration: none;
+  transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+.author-link:hover {
+  background: var(--gold);
+  color: #151018;
+  transform: translateY(-2px);
+}
 
 /* =========================================================
    FOOTER
