@@ -1869,6 +1869,41 @@ footer b {
   }
 }
 
+/* ==================================================
+   BOOK ONE ARCHIVE ENTRANCE
+   ================================================== */
+
+.archive-return-wrap {
+  padding-top: 38px;
+  padding-bottom: 4px;
+}
+
+.archive-return {
+  display: inline-block;
+  color: var(--muted);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
+
+.archive-return:hover {
+  color: var(--gold);
+  transform: translateX(-3px);
+}
+
+.mara-access-granted {
+  margin: 0 0 18px;
+  color: var(--gold);
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .8;
+}
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
