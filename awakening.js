@@ -585,6 +585,10 @@ function beginAssessment() {
   eclipsedSequence.hidden = true;
   eclipsedResult.hidden = true;
 
+  document.body.classList.remove(
+    "eclipsed-awakening"
+  );
+
   quizScreen.hidden = false;
 
   currentQuestion = 0;
@@ -672,22 +676,16 @@ function chooseAnswer(answerIndex) {
     scoringMatrix[currentQuestion][answerIndex];
 
 
-  /* Recognized Order scoring */
-
   Object.entries(scoring.orders)
     .forEach(([order, points]) => {
       scores[order] += points;
     });
 
 
-  /* Hidden Eclipsed scoring */
-
   if (scoring.eclipsed) {
     eclipsedScore += scoring.eclipsed;
   }
 
-
-  /* Hidden Eclipsed traits */
 
   if (scoring.traits) {
 
@@ -697,8 +695,6 @@ function chooseAnswer(answerIndex) {
 
   }
 
-
-  /* Track F answers */
 
   if (answerIndex === 5) {
     fCount++;
@@ -741,43 +737,17 @@ function finishAssessment() {
     rankedOrders[1][0];
 
 
-  /*
-    Count how many different Eclipsed
-    trait categories appeared.
-  */
-
   const activeTraits =
     Object.values(eclipsedTraits)
       .filter((value) => value > 0)
       .length;
 
 
-  /*
-    Meaningful recognized affinity requires
-    at least 4 points in an Order.
-
-    Tiny incidental cross-points do not count.
-  */
-
   const meaningfulAffinities =
     Object.values(scores)
       .filter((score) => score >= 4)
       .length;
 
-
-  /*
-    ECLIPSED QUALIFICATION
-
-    All four conditions must be satisfied.
-
-    1. Hidden Eclipsed score of 13+
-    2. At least 3 of 4 Eclipsed traits
-    3. Meaningful affinity with 3+ Orders
-    4. No more than 7 F answers
-
-    Therefore:
-    ALL-F GOBLIN DOES NOT QUALIFY. 😂
-  */
 
   const qualifiesForEclipsed =
     eclipsedScore >= 13 &&
@@ -788,17 +758,7 @@ function finishAssessment() {
 
   if (qualifiesForEclipsed) {
 
-    console.log(
-      "ECLIPSED QUALIFIED",
-      {
-        eclipsedScore,
-        eclipsedTraits,
-        scores,
-        fCount
-      }
-    );
-
-    showEclipsedTestResult();
+    beginEclipsedSequence();
 
     return;
   }
@@ -848,15 +808,128 @@ function showRecognizedResult(
 
 
 /* =========================================
-   TEMPORARY ECLIPSED TEST RESULT
-
-   Later this will trigger the full corrupted
-   Crown classification sequence.
+   ECLIPSED CLASSIFICATION FAILURE
 ========================================= */
 
-function showEclipsedTestResult() {
+async function beginEclipsedSequence() {
 
+  const classificationCheck =
+    document.getElementById(
+      "classification-check"
+    );
+
+  const reducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+  const normalDelay =
+    reducedMotion ? 100 : 650;
+
+  const finalDelay =
+    reducedMotion ? 150 : 1200;
+
+
+  classificationCheck.innerHTML = "";
+
+  eclipsedSequence.hidden = false;
+
+
+  const checks = [
+    "EMBER",
+    "VEIL",
+    "VERDANT",
+    "ASTRAL",
+    "IRON"
+  ];
+
+
+  await wait(normalDelay);
+
+
+  for (const order of checks) {
+
+    const row =
+      document.createElement("div");
+
+    row.className =
+      "classification-row";
+
+    row.innerHTML =
+      `<span>${order}</span>
+       <span class="classification-dots"></span>
+       <span class="no-match">NO MATCH</span>`;
+
+    classificationCheck.appendChild(row);
+
+
+    requestAnimationFrame(() => {
+      row.classList.add("visible");
+    });
+
+
+    await wait(normalDelay);
+
+  }
+
+
+  await wait(finalDelay);
+
+
+  const failure =
+    document.createElement("div");
+
+  failure.className =
+    "classification-failure";
+
+  failure.textContent =
+    "RESULT: NO RECOGNIZED ORDER FOUND";
+
+  classificationCheck.appendChild(failure);
+
+
+  requestAnimationFrame(() => {
+    failure.classList.add("visible");
+  });
+
+
+  await wait(finalDelay);
+
+
+  document.body.classList.add(
+    "eclipsed-awakening"
+  );
+
+
+  await wait(
+    reducedMotion ? 100 : 900
+  );
+
+
+  eclipsedSequence.hidden = true;
   eclipsedResult.hidden = false;
+
+
+  window.scrollTo({
+    top: 0,
+    behavior:
+      reducedMotion ? "auto" : "smooth"
+  });
+}
+
+
+/* =========================================
+   TIMING HELPER
+========================================= */
+
+function wait(milliseconds) {
+
+  return new Promise(
+    (resolve) => {
+      setTimeout(resolve, milliseconds);
+    }
+  );
 
 }
 
@@ -877,6 +950,10 @@ document
         resultScreen.hidden = true;
         eclipsedSequence.hidden = true;
         eclipsedResult.hidden = true;
+
+        document.body.classList.remove(
+          "eclipsed-awakening"
+        );
 
         startScreen.hidden = false;
 
