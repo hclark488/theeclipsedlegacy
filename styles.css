@@ -643,6 +643,82 @@ footer b {
   margin-top: 8px;
 }
 
+/* =========================
+   VEYR SECTION
+   ========================= */
+
+.veyr-section {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.veyr-map {
+  padding: 12px;
+  border: 1px solid rgba(199, 179, 122, .55);
+  background: #171219;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .45);
+  overflow: hidden;
+}
+
+.veyr-map img {
+  width: 100%;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.veyr-map:hover img {
+  transform: scale(1.015);
+}
+
+.veyr-copy {
+  max-width: 600px;
+}
+
+.veyr-copy h2 {
+  font-size: clamp(2.5rem, 4.5vw, 4.6rem);
+  line-height: 1.15;
+  margin: .2em 0 .45em;
+}
+
+.veyr-copy .lead {
+  margin-bottom: 24px;
+}
+
+.veyr-warning {
+  color: var(--cream);
+  font-style: italic;
+  line-height: 1.8;
+  margin: 26px 0 30px;
+  padding-left: 18px;
+  border-left: 1px solid var(--gold);
+}
+
+.veyr-button {
+  display: inline-block;
+  padding: 12px 18px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: Cinzel, serif;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+
+.veyr-button:hover {
+  background: var(--gold);
+  color: #151018;
+}
+
+.veyr-record {
+  margin-top: 22px;
+  color: #706770;
+  font-family: monospace;
+  font-size: .62rem;
+  letter-spacing: .12em;
+}
 
 /* =========================================================
    RESPONSIVE
@@ -675,7 +751,16 @@ footer b {
   max-width: 320px;
   height: 320px;
   margin: 0 auto;
-}
+   }
+
+   .veyr-section {
+  grid-template-columns: 1fr;
+  gap: 45px;
+   }
+
+.veyr-copy {
+  max-width: none;
+   }
 }
 
 
