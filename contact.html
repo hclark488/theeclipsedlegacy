@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Heather J. Clark | The Eclipsed Legacy</title>
+
+  <meta
+    name="description"
+    content="Contact Heather J. Clark, author of The Eclipsed Legacy fantasy series."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="contact-page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="shell nav">
+
+      <a class="brand" href="index.html">
+        THE ECLIPSED LEGACY
+      </a>
+
+      <button
+        class="menu"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="nav-links">
+        <a href="index.html#books">Explore the Books</a>
+        <a href="index.html#orders">Explore the Five Orders</a>
+        <a href="awakening.html">Awaken Your Mark</a>
+        <a href="veyr.html">Explore Veyr</a>
+        <a href="index.html#newsletter">Newsletter</a>
+        <a href="index.html#author">About the Author</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- CONTACT HERO -->
+    <section class="section contact-hero">
+
+      <div class="shell contact-shell">
+
+        <p class="eyebrow">
+          CROWN CORRESPONDENCE
+        </p>
+
+        <h1>
+          Send a Dispatch
+        </h1>
+
+        <p class="contact-tagline">
+          Messages beyond the official record.
+        </p>
+
+        <p class="lead contact-intro">
+          For reader messages, book inquiries, review requests,
+          collaborations, or other correspondence, send a dispatch below.
+        </p>
+
+
+        <!-- CONTACT FORM -->
+        <form
+          id="contactForm"
+          class="contact-form"
+        >
+
+          <!-- Web3Forms Access -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="4b851b18-0d37-4f4b-b00b-ad098c6a55a1"
+          >
+
+          <input
+            type="hidden"
+            name="subject"
+            value="New Crown Correspondence"
+          >
+
+          <input
+            type="hidden"
+            name="from_name"
+            value="The Eclipsed Legacy Website"
+          >
+
+
+          <!-- Honeypot Spam Trap -->
+          <input
+            type="checkbox"
+            name="botcheck"
+            class="contact-botcheck"
+            tabindex="-1"
+            autocomplete="off"
+          >
+
+
+          <div class="contact-field">
+            <label for="contactName">
+              Your Name
+            </label>
+
+            <input
+              type="text"
+              id="contactName"
+              name="name"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+
+          <div class="contact-field">
+            <label for="contactEmail">
+              Your Email
+            </label>
+
+            <input
+              type="email"
+              id="contactEmail"
+              name="email"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+
+          <div class="contact-field">
+            <label for="contactReason">
+              Reason for Contact
+            </label>
+
+            <select
+              id="contactReason"
+              name="reason"
+              required
+            >
+              <option value="" selected disabled>
+                Select a reason
+              </option>
+
+              <option value="Reader Message">
+                Reader Message
+              </option>
+
+              <option value="Book Club">
+                Book Club
+              </option>
+
+              <option value="Review or Media">
+                Review or Media
+              </option>
+
+              <option value="Business Inquiry">
+                Business Inquiry
+              </option>
+
+              <option value="Website Issue">
+                Website Issue
+              </option>
+
+              <option value="Other">
+                Other
+              </option>
+            </select>
+          </div>
+
+
+          <div class="contact-field">
+            <label for="contactMessage">
+              Message
+            </label>
+
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="8"
+              required
+            ></textarea>
+          </div>
+
+
+          <button
+            class="contact-submit"
+            type="submit"
+          >
+            SEND DISPATCH
+          </button>
+
+
+          <p
+            id="contactStatus"
+            class="contact-status"
+            aria-live="polite"
+          ></p>
+
+        </form>
+
+
+        <!-- SUCCESS MESSAGE -->
+        <div
+          id="contactSuccess"
+          class="contact-success"
+          hidden
+        >
+          <p class="eyebrow">
+            CROWN CORRESPONDENCE
+          </p>
+
+          <h2>
+            Dispatch Received
+          </h2>
+
+          <p>
+            Your correspondence has been entered into the archive.
+          </p>
+
+          <button
+            id="sendAnother"
+            class="contact-another"
+            type="button"
+          >
+            SEND ANOTHER DISPATCH
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="shell">
+
+      <p>
+        © Heather J. Clark
+      </p>
+
+      <p class="footer-record">
+        CROWN CORRESPONDENCE // AUTHORIZED COMMUNICATION CHANNEL
+      </p>
+
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+  <script>
+    const contactForm = document.getElementById("contactForm");
+    const contactStatus = document.getElementById("contactStatus");
+    const contactSuccess = document.getElementById("contactSuccess");
+    const sendAnother = document.getElementById("sendAnother");
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const originalText = submitButton.textContent;
+
+      submitButton.disabled = true;
+      submitButton.textContent = "SENDING DISPATCH...";
+      contactStatus.textContent = "";
+
+      try {
+        const formData = new FormData(contactForm);
+
+        const response = await fetch(
+          "https://api.web3forms.com/submit",
+          {
+            method: "POST",
+            body: formData
+          }
+        );
+
+        const data = await response.json();
+
+        if (data.success) {
+          contactForm.reset();
+          contactForm.hidden = true;
+          contactSuccess.hidden = false;
+        } else {
+          contactStatus.textContent =
+            "The dispatch could not be sent. Please try again.";
+        }
+
+      } catch (error) {
+        contactStatus.textContent =
+          "The archive could not be reached. Please try again.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    });
+
+    sendAnother.addEventListener("click", () => {
+      contactSuccess.hidden = true;
+      contactForm.hidden = false;
+      contactStatus.textContent = "";
+      document.getElementById("contactName").focus();
+    });
+  </script>
+
+</body>
+</html>
