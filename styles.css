@@ -3142,3 +3142,15 @@ body.order-page .order-hero .order-hero-symbol img {
     padding: 22px 18px;
   }
 }
+/* =========================================================
+   FIVE ORDERS — PERSONNEL ARCHIVE HINT
+   ========================================================= */
+
+.order-records-hint {
+  margin: 22px 0 18px;
+  color: #827486;
+  font-family: monospace;
+  font-size: .65rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
